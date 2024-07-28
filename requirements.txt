@@ -1,0 +1,9 @@
+asgiref==3.8.1
+Django==5.0.7
+django-browser-reload==1.13.0
+django-tailwind==3.8.0
+gunicorn==22.0.0
+packaging==24.1
+sqlparse==0.5.1
+typing_extensions==4.12.2
+whitenoise==6.7.0

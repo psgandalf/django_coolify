@@ -1,0 +1,30 @@
+[variables]
+NIXPACKS_METADATA = 'python,django,node,nginx'
+PIP_DEFAULT_TIMEOUT = '101'
+PIP_DISABLE_PIP_VERSION_CHECK = '1'
+PIP_NO_CACHE_DIR = '1'
+PYTHONDONTWRITEBYTECODE = '1'
+PYTHONFAULTHANDLER = '1'
+PYTHONHASHSEED = 'random'
+PYTHONUNBUFFERED = '1'
+[phases.install]
+dependsOn = ['setup']
+cmds = ['python -m venv --copies /opt/venv && . /opt/venv/bin/activate && pip install -r requirements.txt && npm install']
+cacheDirectories = ['/root/.cache/pip']
+paths = ['/opt/venv/bin']
+
+[phases.setup]
+nixPkgs = [
+'python3',
+'nodejs_20',
+'gcc',
+]
+nixLibs = [
+'zlib',
+'stdenv.cc.cc.lib',
+]
+nixOverlays = []
+nixpkgsArchive = 'bf446f08bff6814b569265bef8374cfdd3d8f0e0'
+
+[start]
+cmd = 'npx tailwindcss -i ./static/src/input.css -o ./static/src/output.css &&  python manage.py collectstatic --no-input --clear && python manage.py migrate && gunicorn core.wsgi'

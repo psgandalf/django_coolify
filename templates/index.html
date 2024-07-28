@@ -1,0 +1,37 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block content %}
+  <h1 class="mb-6 text-3xl text-green-800">Django + Tailwind CSS + Flowbite</h1>
+
+  <div class="flex space-x-4">
+    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+      <a href="#"><img class="rounded-t-lg" src="{% static 'images/cat.jpg' %}" alt="" /></a>
+      <div class="p-5">
+        <a href="#"><h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Django + Tailwind CSS</h5></a>
+        <p class="font-normal text-gray-700 dark:text-gray-400">An example page on a Django setup with:</p>
+        <ul>
+          <li>Tailwind</li>
+          <li>Flowbite</li>
+          <li>Whitenoise</li>
+          <li>Alpinejs</li>
+          <li>htmx</li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+          <img class="rounded-t-lg" src="{% static 'images/dog.jpg' %}" alt="" />
+        <div class="p-5">
+          <a href="#"><h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Alpinejs and htmx</h5></a>
+          <p class="font-normal text-gray-700 dark:text-gray-400">This is some text beneath the second card image.</p>
+          <h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1>
+          <div x-data="{ count: 0 }">
+            <button x-on:click="count++" type="button" class="mt-3 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Increment</button>
+            <span x-text="count"></span>
+          </div>
+          <h1 >I ❤️ Htmx</h1>
+            <button hx-on:click="alert('Clicked!')" type="button" class="mt-3 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Click me!</button>
+            Click me!
+        </button>
+        </div>
+      </div>
+{% endblock %}
