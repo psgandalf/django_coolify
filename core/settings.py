@@ -27,7 +27,7 @@ SECRET_KEY = "django-insecure-vza2$z%&86%vn*+dwg62zmy69b*-oxw8ui2jml8rnlkun&kgre
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "django-coolify.coolprojects.eu"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "django-coolify.coolprojects.eu", "*"]
 
 
 # Application definition
